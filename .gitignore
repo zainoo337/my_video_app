@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+.env
+
+#virtual environment
+my_app/

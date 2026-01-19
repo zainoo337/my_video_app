@@ -1,12 +1,29 @@
-from pydantic import BaseModel
+from pydantic import BaseModel ,EmailStr
+   
 
-class videoData(BaseModel):
-    title:str
-    video_id:int
-    is_published:bool = False
-    playback_url : str
+class VideoData(BaseModel):
+    video_id: int
+    title: str
+    playback_url: str
+    owner_id: int
+    is_published: bool = False
     
 class UserCreate(BaseModel):
     name:str
-    id:int
-    is_active:bool = False
+    email : EmailStr
+    plain_password : str
+
+class UserOut(BaseModel):
+    id : int
+    name :str
+    email : EmailStr
+    is_active : bool
+    
+class VideoOut(BaseModel):
+    video_id : int
+    owner_id : int
+    title : str
+    playback_url : str
+    is_published : bool
+    
+    

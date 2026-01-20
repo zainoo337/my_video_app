@@ -6,7 +6,7 @@ import datetime
 
 class VideosTable(SQLModel,table = True):
     video_id : Optional[int] = Field(primary_key=True, default = None,index = True)
-    owner_id : int = Field(foreign_key= UserTable.id , default = None)
+    owner_id : int = Field(foreign_key= "UserTable.id" , default = None)
     title : str = Field(unique = True, index = True )
     video_description: str
     uploaded_at : datetime.datetime

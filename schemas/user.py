@@ -9,4 +9,3 @@ class UserTable(SQLModel, table = True):
     password: str
     created_at: datetime.datetime
     is_active:bool = Field(default = True)
-    

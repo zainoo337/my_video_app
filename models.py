@@ -9,7 +9,7 @@ class VideoData(BaseModel):
     is_published: bool = False
     
 class UserCreate(BaseModel):
-    name:str
+    username:str
     email : EmailStr
     plain_password : str
 
@@ -18,6 +18,7 @@ class UserOut(BaseModel):
     name :str
     email : EmailStr
     is_active : bool
+    plain_password :str
     
 class VideoOut(BaseModel):
     video_id : int
@@ -25,5 +26,3 @@ class VideoOut(BaseModel):
     title : str
     playback_url : str
     is_published : bool
-    
-    
